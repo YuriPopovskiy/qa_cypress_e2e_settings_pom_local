@@ -22,12 +22,14 @@ module.exports = defineConfig({
             (Math.random() * 1000);
           return {
             username: userName.toLowerCase(),
-            newUserName: userName.toLowerCase() + `${randomNumber}`,
+            newUserName: faker.person.firstName() + Math.ceil
+            (Math.random() * 1000),
             bio: faker.lorem.words(3),
             email: 'test'+`${randomNumber}`+'@gmail.com',
             newEmail: `${userName}`+`${randomNumber}`+'@gmail.com',
             password: '1qaz2wsx',
-            newPassword: `${userName}`+ Math.ceil(Math.random() * 1000)
+            newPassword: faker.internet.password() + Math.ceil
+              (Math.random() * 1000)
           };
         },
         generateArticle() {
