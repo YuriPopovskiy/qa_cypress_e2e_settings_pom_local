@@ -8,7 +8,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('task', {
         generateUser() {
-          let randomNumber = Math.ceil(Math.random(1000) * 1000);
+          let randomNumber = Math.ceil(Math.random() * 1000);
           let userName = faker.person.firstName() + `${randomNumber}`;
           return {
             username: userName.toLowerCase(),
@@ -17,8 +17,9 @@ module.exports = defineConfig({
           };
         },
         generateDataUserSettings() {
-          let randomNumber = Math.ceil(Math.random(1000) * 1000);
-          let userName = faker.person.firstName() + `${randomNumber}`;
+          let randomNumber = Math.ceil(Math.random() * 1000);
+          let userName = faker.person.firstName() + Math.ceil
+            (Math.random() * 1000);
           return {
             username: userName.toLowerCase(),
             newUserName: userName.toLowerCase() + `${randomNumber}`,
@@ -26,7 +27,7 @@ module.exports = defineConfig({
             email: 'test'+`${randomNumber}`+'@gmail.com',
             newEmail: `${userName}`+`${randomNumber}`+'@gmail.com',
             password: '1qaz2wsx',
-            newPassword: `${userName}`+`${randomNumber}`
+            newPassword: `${userName}`+ Math.ceil(Math.random() * 1000)
           };
         },
         generateArticle() {

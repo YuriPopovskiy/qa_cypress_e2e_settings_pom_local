@@ -51,7 +51,7 @@ describe('Settings page', () => {
     settingsPage.typePassword(newUserPassword);
     settingsPage.clickUpdateBtn();
     cy.clearAllCookies();
-    cy.login(user.email,user.username,newUserPassword);
+    cy.login(user.email,newUserPassword);
     settingsPage.visit();
     settingsPage.emailField.should('have.value', user.email);
   });
